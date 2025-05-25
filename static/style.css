@@ -1,0 +1,134 @@
+:root {
+  --font: 'Segoe UI', sans-serif;
+  --black: #000;
+  --white: #fff;
+}
+
+body {
+  background-color: rgb(233, 235, 228);
+  font-family: var(--font);
+  margin: 0;
+  padding: 0;
+}
+
+/* Welcome Page */
+.welcome-page {
+  background: linear-gradient(to bottom, #d9e9ef, #f0f4f7);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-container h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.start-btn {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.start-btn:hover {
+  background-color: #444;
+}
+
+/* Predict Page */
+.predict-page {
+  background-image: url('/static/predict_bg.png'); /* NEW */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.form-card {
+  background-color: rgba(243, 243, 243, 0.249); /* 20% visible */
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.input-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* Color Classes */
+.peach { background-color: #ffe0b28c; }
+.green { background-color: #c8e6c9ac; }
+.pink  { background-color: #ffcdd2b6; }
+.blue  { background-color: #b2ebf2be; }
+.red   { background-color: #ef9a9aa6; }
+.purple { background-color: hsla(291, 41%, 64%, 0.548); }
+.yellow { background-color: #dbc09ed1; }
+.teal { background-color: #77bdb5b9;}
+
+
+input[type="number"],
+input[type="text"],
+select {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: var(--font);
+}
+
+.predict-btn {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 0.75rem 2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.predict-btn:hover {
+  background-color: #222;
+}
+
+.result {
+  margin-top: 1.5rem;
+  background-color: #e0f7fa;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.prediction-value {
+  font-size: 1.5rem;
+  color: #00796b;
+  font-weight: bold;
+}
