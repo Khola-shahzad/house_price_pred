@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>House Price Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="predict-page">
+  <div class="form-card">
+    <h2>Please enter the following property details:</h2>
+    <form action="/predict" method="post">
+      <div class="form-grid">
+
+        <div class="input-group peach">
+          <label>Area (Sqft)</label>
+          <input type="number" name="area" step="1" required>
+        </div>
+
+        <div class="input-group green">
+          <label>Bedrooms</label>
+          <input type="number" name="bedrooms" step="1" required>
+        </div>
+
+        <div class="input-group pink">
+          <label>Bathrooms</label>
+          <input type="number" name="bathrooms" step="1" required>
+        </div>
+
+        <div class="input-group blue">
+          <label>Floors</label>
+          <input type="number" name="floors" step="1" required>
+        </div>
+
+        <div class="input-group red">
+          <label>Year Built</label>
+          <input type="number" name="yearbuilt" step="1" required>
+        </div>
+
+        <div class="input-group purple">
+          <label>Location</label>
+          <select name="location" required>
+            <option value="">Select Location</option>
+            <option value="Downtown">Downtown</option>
+            <option value="Suburban">Suburban</option>
+            <option value="Urban">Urban</option>
+            <option value="Rural">Rural</option>
+          </select>
+        </div>
+
+        <div class="input-group yellow">
+          <label>Condition</label>
+          <select name="condition" required>
+            <option value="">Select Condition</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+            <option value="Poor">Poor</option>
+          </select>
+        </div>
+
+        <div class="input-group teal">
+          <label>Garage</label>
+          <select name="garage" required>
+            <option value="">Garage?</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+      </div>
+      <button type="submit" class="btn predict-btn">PREDICT</button>
+    </form>
+
+    {% if prediction %}
+      <div class="result">
+        <h3>Predicted Price (PKR):</h3>
+        <p class="prediction-value">Rs. {{ prediction }}</p>
+      </div>
+    {% elif error %}
+      <div class="result error">
+        <p style="color:red;">{{ error }}</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
